@@ -1,0 +1,28 @@
+<div>
+    <div style="padding:20px;">
+        <h3>Apply Leave</h3>
+    </div>
+<div>
+    <form #form="ngForm">
+        <div class="container">
+        <input type="hidden" name="id"/>
+        
+        <div class="form-group row">
+        <label class="col-md-2" for="lt">Leave Type :</label>
+        <select id="lt" name="lt" [(ngModel)]="ltype" required>
+          <option [value]='l.leave_name' *ngFor='let l of leavelist'>{{l.leave_name}}</option>
+        </select>
+        </div>
+        <div class="form-group row">
+        <label class="col-md-2" for="fdate">From Date :</label>
+        <input type="date" id="fdate" name="fdate" [(ngModel)]="start" required>
+        </div>
+        <div class="form-group row">
+        <label class="col-md-2" for="tdate">To Date :</label>
+        <input type="date" id="tdate" name="tdate" [(ngModel)]="end" required>
+        </div>
+        <input [disabled]="!form.valid" class='btn btn-primary' type="button" value="Save" (click)='save()'>
+        </div>
+      </form>
+    </div>
+    </div>  

@@ -1,0 +1,39 @@
+<h3 class="text-center">Employee List</h3>
+<div>
+    <div>
+      <div class='row' style="padding:10px">
+        <div class='col-md-1'>Search</div>
+        <div class='col-md-9'>
+            <input type='text'[(ngModel)]='searchname'/>
+        </div>
+        <div class='col-md-2'>
+        <button class='btn btn-primary' [routerLink]="['/adminArea/employeeAdd']">
+            Add Employee
+        </button>
+    </div>
+    </div>
+      <div class='table-responsive'>
+        <table class='table' *ngIf='e1'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>DOJ</th>
+              <th>DOB</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let emp of e1 | search:searchname'>
+              <td>{{emp.emp_name}}</td>
+              <td>{{emp.emp_email}}</td>
+              <td>{{emp.emp_doj}}</td>
+              <td>{{emp.emp_dob}}</td>
+              <td><button class='btn btn-primary' [routerLink]="['/adminArea/employeeEdit/',emp.emp_id]">Edit</button></td>
+              <td><button class='btn btn-primary' (click)='delete(emp.emp_id)'>Delete</button></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>

@@ -1,0 +1,18 @@
+<div style="padding:20px;border-bottom:solid;border-color: black;">
+    <h3>Leave Management</h3>
+    <button class='btn btn-primary' [routerLink]="['/home/adminLogin']">
+        Logout
+    </button>
+</div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-2">
+        <button class="btn btn-primary" style="padding:10px;margin:10px;width:10rem;" [routerLink]="['/adminArea/employeeList']">Employee List</button>
+        <button class="btn btn-primary" style="padding:10px;margin:10px;width:10rem;" [routerLink]="['/adminArea/leaveList']"> Leave Configuration</button>
+        <button class="btn btn-primary" style="padding:10px;margin:10px;width:10rem;" [routerLink]="['/adminArea/aproveLeave']"> Leave List</button>
+    </div>
+    <div class="col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+</div>

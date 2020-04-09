@@ -1,0 +1,28 @@
+<h3 class="text-center" style="padding: 15px;">Leave Configuration</h3>
+<div>
+    <div style="padding:10px">
+        <button class='btn btn-primary' [routerLink]="['/adminArea/leaveAdd']">
+            Add Leave
+</button>
+    </div>
+      <div class='table-responsive'>
+        <table class='table' *ngIf='e1'> 
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of days</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let emp of e1'>
+              <td>{{emp.leave_name}}</td>
+              <td>{{emp.alloweddays}}</td>
+              <td><button class='btn btn-primary' [routerLink]="['/adminArea/leaveEdit/',emp.leave_id]">Edit</button></td>
+              <td><button class='btn btn-primary' (click)='delete(emp.leave_id)'>Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>

@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div>
+      <h3 class="navbar-brand">Add employee</h3>
+      <button class='btn btn-primary' style="margin-left:350px;" [routerLink]="['/adminArea/employeeList']">Back</button>
+    </div>
+  <div class="card-body">
+<form #form="ngForm">
+    <div class="container">
+      <input type="hidden" name="id" [value]='employeeValue.emp_id'/>
+    <div class="form-group row">
+    <label class="col-md-4" for="fname">Name : </label>
+    <input type="text" id="fname" name="fname" [(ngModel)]='employeeValue.emp_name'>
+    </div>
+    <div class="form-group row">
+    <label class="col-md-4" for="lname">DOB : </label>
+    <input type="date" id="dob" name="dob" [(ngModel)]='employeeValue.emp_dob'>
+    </div>
+    <div class="form-group row">
+    <label class="col-md-4" for="email">Email : </label>
+    <input type="email" id="email" name="email" [(ngModel)]='employeeValue.emp_email'>
+    </div>
+    <div class="form-group row">
+    <label class="col-md-4" for="cno">DOJ :</label>
+    <input type="date" id="doj" name="doj" [(ngModel)]='employeeValue.emp_doj'>
+    </div>
+    <div class="form-group row">
+    <label class="col-md-4" for="uname">salary :</label>
+    <input type="number" id="sal" name="sal" [(ngModel)]='employeeValue.emp_salary'>
+    </div>
+
+    <input class='btn btn-primary' type="button" value="Edit Employee" (click)='editemployee()'>
+    </div>
+  </form>
+</div>
+</div>

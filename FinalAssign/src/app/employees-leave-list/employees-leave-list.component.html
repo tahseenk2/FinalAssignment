@@ -1,0 +1,36 @@
+<h3 class="text-center" style="padding: 15px;">My Leaves</h3>
+<div>
+    <div>
+      <div class="row" style="padding-bottom:10px">
+        <div class="col-md-4"><h5>Leave Balance</h5></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3" *ngFor='let le of lm'>{{le.leave_name}} : {{le.alloweddays}}</div>
+        <div class="col-md-3">
+          <button class='btn btn-primary' [routerLink]="['/employeeArea/employeesLeave',eid]">
+            Apply
+</button>
+        </div>
+      </div>
+    </div>
+      <div class='table-responsive'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>Leave Dates</th>
+              <th>Leave Type</th>
+              <th>Number of days</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let emp of filter()'>
+              <td>{{emp.start}} to {{emp.end}}</td> 
+              <td>{{emp.leaveName}}</td>
+              <td>{{daysdifference(emp.start,emp.end)}}</td>
+              <td>{{emp.status}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
