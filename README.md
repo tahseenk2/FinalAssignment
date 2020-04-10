@@ -1,7 +1,8 @@
 # FinalAssignment
 
-"FinalAssign" is the AngularProject
-"LeaveAPI" is the WebAPI
+"FinalAssign" is the AngularProject.
+
+"LeaveAPI" is the WebAPI.
 
 Please refresh the page or switch between the buttons, in-case the data doesn't get updated or displayed after Add/Edit operations.
 
